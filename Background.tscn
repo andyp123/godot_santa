@@ -40,7 +40,7 @@ texture = ExtResource( 2 )
 
 [node name="sky" type="ParallaxLayer" parent="parallax_background"]
 
-motion/scale = Vector2( 0, 0.07 )
+motion/scale = Vector2( 0, 0.5 )
 motion/offset = Vector2( 0, 0 )
 motion/mirroring = Vector2( 0, 0 )
 
@@ -60,7 +60,7 @@ stretch_mode = 2
 [node name="hills_2" type="ParallaxLayer" parent="parallax_background"]
 
 editor/display_folded = true
-motion/scale = Vector2( 0.2, 0.07 )
+motion/scale = Vector2( 0.2, 0.65 )
 motion/offset = Vector2( 0, 0 )
 motion/mirroring = Vector2( 1280, 0 )
 
@@ -80,7 +80,7 @@ stretch_mode = 2
 [node name="hills_1" type="ParallaxLayer" parent="parallax_background"]
 
 editor/display_folded = true
-motion/scale = Vector2( 0.3, 0.1 )
+motion/scale = Vector2( 0.3, 0.6 )
 motion/offset = Vector2( 0, 0 )
 motion/mirroring = Vector2( 1280, 0 )
 
@@ -94,7 +94,7 @@ region_rect = Rect2( 0, 0, 1280, 720 )
 [node name="trees_2" type="ParallaxLayer" parent="parallax_background"]
 
 editor/display_folded = true
-motion/scale = Vector2( 0.6, 0.12 )
+motion/scale = Vector2( 0.6, 0.8 )
 motion/offset = Vector2( 0, 0 )
 motion/mirroring = Vector2( 1280, 0 )
 
@@ -136,7 +136,7 @@ texture = ExtResource( 8 )
 [node name="trees_1" type="ParallaxLayer" parent="parallax_background"]
 
 editor/display_folded = true
-motion/scale = Vector2( 0.7, 0.16 )
+motion/scale = Vector2( 0.7, 0.9 )
 motion/offset = Vector2( 0, 0 )
 motion/mirroring = Vector2( 1280, 0 )
 
@@ -192,7 +192,7 @@ region_rect = Rect2( 0, 0, 1280, 720 )
 [node name="buildings" type="ParallaxLayer" parent="parallax_background"]
 
 editor/display_folded = true
-motion/scale = Vector2( 0.8, 0.2 )
+motion/scale = Vector2( 0.8, 1 )
 motion/offset = Vector2( 0, 0 )
 motion/mirroring = Vector2( 2400, 0 )
 
@@ -245,9 +245,9 @@ drag_margin/top = 0.2
 drag_margin/right = 0.2
 drag_margin/bottom = 0.2
 script/script = ExtResource( 14 )
-min_y = null
-max_y = null
-tracking_speed = null
+min_y = -800.0
+max_y = 0.0
+target_offset = Vector2( 0, 240 )
 
 [node name="player" parent="." instance=ExtResource( 15 )]
 

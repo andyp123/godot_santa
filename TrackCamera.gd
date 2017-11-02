@@ -1,22 +1,25 @@
 extends Camera2D
 
-export(int, -420) var min_y
-export(int, 0) var max_y
-export(float, 10.0) var tracking_speed
+export(float) var min_y = -800.0
+export(float) var max_y = 0.0
 
 var target = null
-var velocity = Vector2()
+export(Vector2) var target_offset = Vector2()
 
 func _ready():
 	set_process(true)
 	
-	parent = get_parent()
-	target = parent.get_node("player")
+	target = get_parent().get_node("player")
+#	target_offset.y = Globals.get("display/height") * 0.5
 
 func _process(delta):
-	if target != null:
-		pass
-	
 	var pos = get_pos()
-	pos.y = clamp(pos.y, min_y, max_y)
+	var pos_y = pos.y
+	
+	if target != null:
+		pos_y = target.get_pos().y - target_offset.y
+	
+	pos_y = clamp(pos_y, min_y, max_y)
+	print(pos_y)
+	pos.y = pos_y
 	set_pos(pos)
