@@ -1,0 +1,256 @@
+[gd_scene load_steps=16 format=1]
+
+[ext_resource path="res://BackgroundController.gd" type="Script" id=1]
+[ext_resource path="res://moon.png" type="Texture" id=2]
+[ext_resource path="res://sky.png" type="Texture" id=3]
+[ext_resource path="res://hills_back.png" type="Texture" id=4]
+[ext_resource path="res://hills.png" type="Texture" id=5]
+[ext_resource path="res://tree_back_01.png" type="Texture" id=6]
+[ext_resource path="res://tree_back_02.png" type="Texture" id=7]
+[ext_resource path="res://tree_back_03.png" type="Texture" id=8]
+[ext_resource path="res://tree_mid_01.png" type="Texture" id=9]
+[ext_resource path="res://tree_mid_02.png" type="Texture" id=10]
+[ext_resource path="res://tree_mid_03.png" type="Texture" id=11]
+[ext_resource path="res://bghouse_01.png" type="Texture" id=12]
+[ext_resource path="res://bghouse_02.png" type="Texture" id=13]
+[ext_resource path="res://TrackCamera.gd" type="Script" id=14]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=15]
+
+[node name="scene_root" type="Node2D"]
+
+[node name="parallax_background" type="ParallaxBackground" parent="."]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+scroll/offset = Vector2( 0, 0 )
+scroll/base_offset = Vector2( 0, 0 )
+scroll/base_scale = Vector2( 1, 1 )
+scroll/limit_begin = Vector2( 0, 0 )
+scroll/limit_end = Vector2( 0, 0 )
+scroll/ignore_camera_zoom = false
+script/script = ExtResource( 1 )
+scroll_speed = 200.0
+
+[node name="moon" type="Sprite" parent="parallax_background"]
+
+transform/pos = Vector2( 1130, 130 )
+texture = ExtResource( 2 )
+
+[node name="sky" type="ParallaxLayer" parent="parallax_background"]
+
+motion/scale = Vector2( 0, 0.07 )
+motion/offset = Vector2( 0, 0 )
+motion/mirroring = Vector2( 0, 0 )
+
+[node name="background" type="TextureFrame" parent="parallax_background/sky"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = -430.0
+margin/right = 1280.0
+margin/bottom = 594.0
+texture = ExtResource( 3 )
+stretch_mode = 2
+
+[node name="hills_2" type="ParallaxLayer" parent="parallax_background"]
+
+editor/display_folded = true
+motion/scale = Vector2( 0.2, 0.07 )
+motion/offset = Vector2( 0, 0 )
+motion/mirroring = Vector2( 1280, 0 )
+
+[node name="TextureFrame" type="TextureFrame" parent="parallax_background/hills_2"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 530.0
+margin/right = 1280.0
+margin/bottom = 594.0
+texture = ExtResource( 4 )
+stretch_mode = 2
+
+[node name="hills_1" type="ParallaxLayer" parent="parallax_background"]
+
+editor/display_folded = true
+motion/scale = Vector2( 0.3, 0.1 )
+motion/offset = Vector2( 0, 0 )
+motion/mirroring = Vector2( 1280, 0 )
+
+[node name="sprite" type="Sprite" parent="parallax_background/hills_1"]
+
+transform/pos = Vector2( 0, 450 )
+texture = ExtResource( 5 )
+centered = false
+region_rect = Rect2( 0, 0, 1280, 720 )
+
+[node name="trees_2" type="ParallaxLayer" parent="parallax_background"]
+
+editor/display_folded = true
+motion/scale = Vector2( 0.6, 0.12 )
+motion/offset = Vector2( 0, 0 )
+motion/mirroring = Vector2( 1280, 0 )
+
+[node name="tree_1" type="Sprite" parent="parallax_background/trees_2"]
+
+transform/pos = Vector2( 90, 660 )
+texture = ExtResource( 6 )
+
+[node name="tree_1b" type="Sprite" parent="parallax_background/trees_2"]
+
+transform/pos = Vector2( 540, 660 )
+texture = ExtResource( 6 )
+
+[node name="tree_1c" type="Sprite" parent="parallax_background/trees_2"]
+
+transform/pos = Vector2( 1040, 660 )
+texture = ExtResource( 6 )
+
+[node name="tree_2" type="Sprite" parent="parallax_background/trees_2"]
+
+transform/pos = Vector2( 330, 650 )
+texture = ExtResource( 7 )
+
+[node name="tree_2b" type="Sprite" parent="parallax_background/trees_2"]
+
+transform/pos = Vector2( 740, 650 )
+texture = ExtResource( 7 )
+
+[node name="tree_3" type="Sprite" parent="parallax_background/trees_2"]
+
+transform/pos = Vector2( 650, 650 )
+texture = ExtResource( 8 )
+
+[node name="tree_3b" type="Sprite" parent="parallax_background/trees_2"]
+
+transform/pos = Vector2( 1170, 650 )
+texture = ExtResource( 8 )
+
+[node name="trees_1" type="ParallaxLayer" parent="parallax_background"]
+
+editor/display_folded = true
+motion/scale = Vector2( 0.7, 0.16 )
+motion/offset = Vector2( 0, 0 )
+motion/mirroring = Vector2( 1280, 0 )
+
+[node name="tree_1" type="Sprite" parent="parallax_background/trees_1"]
+
+transform/pos = Vector2( 120, 530 )
+texture = ExtResource( 9 )
+centered = false
+region_rect = Rect2( 0, 0, 1280, 720 )
+
+[node name="tree_1b" type="Sprite" parent="parallax_background/trees_1"]
+
+transform/pos = Vector2( 410, 530 )
+texture = ExtResource( 9 )
+centered = false
+region_rect = Rect2( 0, 0, 1280, 720 )
+
+[node name="tree_1c" type="Sprite" parent="parallax_background/trees_1"]
+
+transform/pos = Vector2( 1040, 560 )
+texture = ExtResource( 9 )
+centered = false
+region_rect = Rect2( 0, 0, 1280, 720 )
+
+[node name="tree_2" type="Sprite" parent="parallax_background/trees_1"]
+
+transform/pos = Vector2( 830, 530 )
+texture = ExtResource( 10 )
+centered = false
+region_rect = Rect2( 0, 0, 1280, 720 )
+
+[node name="tree_2b" type="Sprite" parent="parallax_background/trees_1"]
+
+transform/pos = Vector2( 470, 550 )
+texture = ExtResource( 10 )
+centered = false
+region_rect = Rect2( 0, 0, 1280, 720 )
+
+[node name="tree_3" type="Sprite" parent="parallax_background/trees_1"]
+
+transform/pos = Vector2( 930, 530 )
+texture = ExtResource( 11 )
+centered = false
+region_rect = Rect2( 0, 0, 1280, 720 )
+
+[node name="tree_3b" type="Sprite" parent="parallax_background/trees_1"]
+
+transform/pos = Vector2( 340, 540 )
+texture = ExtResource( 11 )
+centered = false
+region_rect = Rect2( 0, 0, 1280, 720 )
+
+[node name="buildings" type="ParallaxLayer" parent="parallax_background"]
+
+editor/display_folded = true
+motion/scale = Vector2( 0.8, 0.2 )
+motion/offset = Vector2( 0, 0 )
+motion/mirroring = Vector2( 2400, 0 )
+
+[node name="building_1" type="Sprite" parent="parallax_background/buildings"]
+
+transform/pos = Vector2( 190, 560 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="building_1b" type="Sprite" parent="parallax_background/buildings"]
+
+transform/pos = Vector2( 1070, 570 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="building_2" type="Sprite" parent="parallax_background/buildings"]
+
+transform/pos = Vector2( 710, 580 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="building_2b" type="Sprite" parent="parallax_background/buildings"]
+
+transform/pos = Vector2( 1810, 580 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="building_2c" type="Sprite" parent="parallax_background/buildings"]
+
+transform/pos = Vector2( 1560, 580 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="camera" type="Camera2D" parent="."]
+
+anchor_mode = 0
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = false
+smoothing/speed = 5.0
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
+script/script = ExtResource( 14 )
+min_y = null
+max_y = null
+tracking_speed = null
+
+[node name="player" parent="." instance=ExtResource( 15 )]
+
+transform/pos = Vector2( 150, 320 )
+
+
