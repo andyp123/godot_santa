@@ -54,7 +54,7 @@ func _fixed_process(delta):
 		velocity.y *= -0.5
 		thrust_penalty_time = thrust_penalty
 	elif pos.y > max_y: # game over
-		pass
+		velocity.y = 0.0
 	
 	pos.y = clamp(pos.y, min_y, max_y)
 	set_pos(pos)
