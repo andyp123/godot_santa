@@ -24,7 +24,6 @@ debug = false
 
 [node name="background" type="ParallaxBackground" parent="."]
 
-editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -38,6 +37,7 @@ scroll/ignore_camera_zoom = false
 
 [node name="sky" type="ParallaxLayer" parent="background"]
 
+editor/display_folded = true
 motion/scale = Vector2( 0, 0.5 )
 motion/offset = Vector2( 0, 0 )
 motion/mirroring = Vector2( 0, 0 )
@@ -62,8 +62,7 @@ texture = ExtResource( 3 )
 
 [node name="hills_2" type="ParallaxLayer" parent="background"]
 
-editor/display_folded = true
-motion/scale = Vector2( 0.2, 0.65 )
+motion/scale = Vector2( 0.2, 0.575 )
 motion/offset = Vector2( 0, 0 )
 motion/mirroring = Vector2( 1280, 0 )
 
