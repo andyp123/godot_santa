@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://SceneController.gd" type="Script" id=1]
+[ext_resource path="res://Background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ObstacleLayer.gd" type="Script" id=3]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Camera.tscn" type="PackedScene" id=5]
+
+[node name="scene_root" type="Node2D"]
+
+script/script = ExtResource( 1 )
+scroll_speed = 300.0
+debug = false
+
+[node name="background" parent="." instance=ExtResource( 2 )]
+
+[node name="foreground" type="Node2D" parent="."]
+
+script/script = ExtResource( 3 )
+obstacle_resources = StringArray( "Obstacle_House_1", "Obstacle_Church", "Obstacle_Shack_1", "Obstacle_Shack_2" )
+spawn_delay = 3.0
+
+[node name="player" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 154.544, 321.451 )
+
+[node name="camera" parent="." instance=ExtResource( 5 )]
+
+

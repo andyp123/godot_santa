@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://ob_church.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="obsctacle_church" type="Node2D"]
+
+[node name="kinematic_body" type="KinematicBody2D" parent="."]
+
+transform/pos = Vector2( 165.808, 0 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 9.79772, 0, 0, 8.45805, 130.451, -104.451 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 1 )
+shapes/1/transform = Matrix32( 6.20329, 0, 0, 14.6613, -73.0407, -185.094 )
+shapes/1/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+
+[node name="main_collision" type="CollisionShape2D" parent="kinematic_body"]
+
+transform/pos = Vector2( 130.451, -104.451 )
+transform/scale = Vector2( 9.79772, 8.45805 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="chimney_collision" type="CollisionShape2D" parent="kinematic_body"]
+
+transform/pos = Vector2( -73.0407, -185.094 )
+transform/scale = Vector2( 6.20329, 14.6613 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 1
+
+[node name="sprite" type="Sprite" parent="kinematic_body"]
+
+transform/pos = Vector2( 70.8451, -202.47 )
+texture = ExtResource( 1 )
+
+
