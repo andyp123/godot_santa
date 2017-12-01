@@ -24,6 +24,7 @@ func _ready():
 	max_y = min_y + play_area.size.y
 	
 	set_fixed_process(true)
+	set_process(true)
 	
 func _fixed_process(delta):
 	# set velocity and gravity
@@ -35,7 +36,7 @@ func _fixed_process(delta):
 	if Input.is_action_pressed("ctrl_thrust"):
 		auto_pilot = false
 		thrust_input = true
-	elif auto_pilot and pos.y > 200.0:
+	elif auto_pilot and pos.y > 250.0:
 			thrust_input = true
 	
 	# apply boost
@@ -61,4 +62,3 @@ func _fixed_process(delta):
 	
 	# set angle based on velocity
 	body.set_rot(-vel_y / MAX_VELOCITY_Y * deg2rad(MAX_ROTATION))
-	

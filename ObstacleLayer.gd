@@ -1,10 +1,9 @@
 extends Node2D
 
-export var obstacle_resources = StringArray()
 var obstacle_objects = []
-
-export var spawn_delay = 3.0 # should really be based on distance
-var accum = 0.0
+export var obstacle_resources = StringArray()
+export var obstacle_spawn_gap_min = 600.0
+export var obstacle_spawn_gap_max = 1000.0
 
 var total_distance = 0.0
 var next_spawn_distance = 300.0
@@ -27,7 +26,7 @@ func _process(delta):
 			var obstacle = obstacle_objects[idx].instance()
 			add_child(obstacle)
 			obstacle.set_pos(Vector2(1280.0, 720.0 + rand_range(0, 10))) # FIXME: magic number
-		next_spawn_distance = total_distance + 600.0 + rand_range(-100, 100)
+		next_spawn_distance = total_distance + rand_range(obstacle_spawn_gap_min, obstacle_spawn_gap_max)
 
 func spawn_obstacle():
 	pass

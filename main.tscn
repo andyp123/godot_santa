@@ -18,11 +18,12 @@ debug = false
 
 script/script = ExtResource( 3 )
 obstacle_resources = StringArray( "Obstacle_House_1", "Obstacle_Church", "Obstacle_Shack_1", "Obstacle_Shack_2" )
-spawn_delay = 3.0
+obstacle_spawn_gap_min = 600.0
+obstacle_spawn_gap_max = 1000.0
 
 [node name="player" parent="." instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 154.544, 321.451 )
+transform/pos = Vector2( 232.544, 354.451 )
 
 [node name="camera" parent="." instance=ExtResource( 5 )]
 

@@ -9,7 +9,7 @@ extents = Vector2( 10, 10 )
 
 [node name="obsctacle_church" type="Node2D"]
 
-[node name="kinematic_body" type="KinematicBody2D" parent="."]
+[node name="obstacle" type="RigidBody2D" parent="."]
 
 transform/pos = Vector2( 165.808, 0 )
 input/pickable = false
@@ -21,9 +21,23 @@ shapes/1/transform = Matrix32( 6.20329, 0, 0, 14.6613, -73.0407, -185.094 )
 shapes/1/trigger = false
 collision/layers = 1
 collision/mask = 1
-collision/margin = 0.08
+mode = 1
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
 
-[node name="main_collision" type="CollisionShape2D" parent="kinematic_body"]
+[node name="main_collision" type="CollisionShape2D" parent="obstacle"]
 
 transform/pos = Vector2( 130.451, -104.451 )
 transform/scale = Vector2( 9.79772, 8.45805 )
@@ -31,7 +45,7 @@ shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="chimney_collision" type="CollisionShape2D" parent="kinematic_body"]
+[node name="chimney_collision" type="CollisionShape2D" parent="obstacle"]
 
 transform/pos = Vector2( -73.0407, -185.094 )
 transform/scale = Vector2( 6.20329, 14.6613 )
@@ -39,7 +53,7 @@ shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 1
 
-[node name="sprite" type="Sprite" parent="kinematic_body"]
+[node name="sprite" type="Sprite" parent="obstacle"]
 
 transform/pos = Vector2( 70.8451, -202.47 )
 texture = ExtResource( 1 )
