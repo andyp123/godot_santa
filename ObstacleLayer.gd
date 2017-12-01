@@ -35,6 +35,8 @@ func update_obstacles(distance):
 	total_distance += distance
 	for obstacle in get_children():
 		# kill obstacle if it has scrolled off the left side
+		if obstacle.get_rect_ws().end.x < 0:
+			obstacle.queue_free()
 		
 		# update obstacle position
 		var pos = obstacle.get_pos()

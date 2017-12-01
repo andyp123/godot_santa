@@ -36,7 +36,7 @@ func _draw():
 
 func update_foreground(delta):
 	if foreground != null:
-		foreground.update_obstacles(scroll_speed * delta)
+ 		foreground.update_obstacles(scroll_speed * delta)
 
 func update_background(delta):
 	if background != null:
