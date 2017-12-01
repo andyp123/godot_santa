@@ -1,17 +1,20 @@
 [gd_scene load_steps=13 format=1]
 
-[ext_resource path="res://sky.png" type="Texture" id=1]
-[ext_resource path="res://moon.png" type="Texture" id=2]
-[ext_resource path="res://hills_back.png" type="Texture" id=3]
-[ext_resource path="res://hills.png" type="Texture" id=4]
-[ext_resource path="res://tree_back_01.png" type="Texture" id=5]
-[ext_resource path="res://tree_back_02.png" type="Texture" id=6]
-[ext_resource path="res://tree_back_03.png" type="Texture" id=7]
-[ext_resource path="res://tree_mid_01.png" type="Texture" id=8]
-[ext_resource path="res://tree_mid_02.png" type="Texture" id=9]
-[ext_resource path="res://tree_mid_03.png" type="Texture" id=10]
-[ext_resource path="res://bghouse_01.png" type="Texture" id=11]
-[ext_resource path="res://bghouse_02.png" type="Texture" id=12]
+[ext_resource path="res://graphics/sky.png" type="Texture" id=1]
+[ext_resource path="res://graphics/moon.png" type="Texture" id=2]
+[ext_resource path="res://graphics/hills_back.png" type="Texture" id=3]
+[ext_resource path="res://graphics/hills.png" type="Texture" id=4]
+[ext_resource path="res://graphics/tree_back_01.png" type="Texture" id=5]
+[ext_resource path="res://graphics/tree_back_02.png" type="Texture" id=6]
+[ext_resource path="res://graphics/tree_back_03.png" type="Texture" id=7]
+[ext_resource path="res://graphics/tree_mid_01.png" type="Texture" id=8]
+[ext_resource path="res://graphics/tree_mid_02.png" type="Texture" id=9]
+[ext_resource path="res://graphics/tree_mid_03.png" type="Texture" id=10]
+[ext_resource path="res://graphics/bghouse_01.png" type="Texture" id=11]
+[ext_resource path="res://graphics/bghouse_02.png" type="Texture" id=12]
+
+
+
 
 [node name="background" type="ParallaxBackground"]
 
